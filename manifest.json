@@ -1,0 +1,27 @@
+{
+    "manifest_version": 3,
+    "name": "Paiement de facture en ligne",
+    "version": "1.0",
+    "description": "Injects text into input fields on specific web pages",
+    "permissions": [
+        "scripting",
+        "activeTab"
+    ],
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "host_permissions": [
+        "*://paiement.iam.ma/facture/internet"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "*://paiement.iam.ma/facture/internet"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "run_at": "document_idle"
+        }
+    ]
+}
